@@ -87,5 +87,35 @@
         ]
       }]
     });
+
+    chart.render();
+
+    //Afstand gelegen over tijd
+    var chart = new CanvasJS.Chart("afstandOverTijd", {
+      animationEnabled: true,
+      theme: "light2",
+      axisY:{
+     includeZero: false
+       },
+      data: [{        
+        type: "line",    
+        lineColor:"#5187ec",  
+        dataPoints: [
+          { y: 1333, indexLabel: "Aarde",markerColor: "#5187ec"},
+          { y: 5332},
+          { y: 21328},
+          { y: 85312},
+          { y: 178702},
+          { y: 220092},
+          { y: 257092},
+          { y: 292092},
+          { y: 287092},
+          { y: 312093},
+          { y: 337092},
+          { y: 362092},
+          { y:384400, indexLabel: "Maan",markerColor: "#5187ec"}
+        ]
+      }]
+    });
     chart.render();
   }

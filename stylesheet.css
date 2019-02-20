@@ -22,9 +22,8 @@ body{
 }
 .grid-container{
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 2fr;
-
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
 }
 /*header*/
 .logo{
@@ -52,39 +51,73 @@ h1{
     color: #181b1e;
     border-bottom: #181b1e solid 1px;
     padding-bottom: 8px;
-}
-#gauge, #voorraadEten{
+} 
+#gauge, #afstandOverTijd,{
     display: flex;
     justify-content: center;
 }
 /*Voertuig Informatie*/
 #gauge{
 }
+/*Voertuig Omgeving*/
+#afstandOverTijd{
+    max-width: 350px; 
+    height: 320px;
+    margin: 16px 16px 16px 16px;
+}
+#voertuigOmgeving p{
+  font-size: 15px;
+  font-family: Helvetica;
+  font-weight: lighter;
+  color: #6f6f6f;
+}
+p{
+  margin-left: 16px;
+}
 /*Voorraden*/
 #voorraadEten, #voorraadWater{
     max-width: 350px; 
     height: 240px;
     margin: 16px 16px 16px 16px;
-
 }
 /*media queries*/
 @media only screen and (min-width: 320px) and (max-width: 767px){
+  .grid-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1023px){
     .grid-container{
-        grid-template-columns: 1fr;  
-        grid-template-rows: 1fr;   
+        grid-template-columns: 1fr 1fr;  
+        grid-template-rows: 480px 1fr;   
+    }
+    #voertuigInformatie{
+        grid-row: 1;
+        grid-column: 1;
+    }
+    #voertuigOmgeving{
+        grid-row: 1;
+        grid-column: 2;
+    }
+    #voorraden{
+        grid-row: 2;
+        grid-column: 1/3;
+    }
+    main{
+        padding: 0px 16px 0px 16px;
     }
     .logo{
       height: 27px;
     }
     .box{
-      max-width: 1023px;
+      max-width: 1000px;
       font-size: 10px;
     }
     #gauge{
-    margin: 0 auto;
+      margin: 0 auto;
     }
     #voorraadEten, #voorraadWater{
       float: left;
@@ -92,49 +125,79 @@ h1{
       margin-left: 32px;
       margin-right: 32px;
     }
+    #afstandOverTijd{
+      height: 300px;
+    }
 }
 @media only screen and (min-width: 1024px) and (max-width: 1599px){
     .grid-container{
         grid-template-columns: 1fr 1fr;  
-        grid-template-rows: 1fr;
+        grid-template-rows: 1fr 1fr;
         padding-right: 16px;
         padding-left: 8px;   
     }
+    #voertuigInformatie{
+        grid-row: 1;
+        grid-column: 1;
+    }
+    #voertuigOmgeving{
+        grid-row: 1;
+        grid-column: 2;
+    }
+    #voorraden{
+        grid-row: 2;
+        grid-column: 1/4;
+    }
     .logo{
-    height: 32px;
-    margin-bottom: 24px;
+        height: 32px;
+        margin-bottom: 24px;
     }
     .box{
-      max-width: 850px;
+      max-width: 1590px;
       margin-left: 16px;
       font-size: 11px;
       box-shadow: 0px 0px 15px rgba(0,0,0,0.7) inset;
     }
-    #gauge, #voorraadEten, #voorraadWater{
+    #gauge, #afstandOverTijd, #voorraadEten, #voorraadWater{
       margin: 32px 32px 32px 32px;
     }
-    #voorraadEten, #voorraadWater{
+    #voorraadEten, #afstandOverTijd, #voorraadWater{
       float: left;
       width: 300px;
+    }
+    #afstandOverTijd{
+      width: 480px;
     }
 }
 @media only screen and (min-width: 1600px) and (max-width: 1920px){
     .grid-container{
-        grid-template-columns: 1fr 1fr;   
+        grid-template-columns: 1fr 1fr 1fr 1fr;   
         grid-template-rows: 1fr; 
     }
+    #voertuigInformatie{
+        grid-row: 1;
+        grid-column: 1;
+    }
+    #voertuigOmgeving{
+        grid-row: 1;
+        grid-column: 2;
+    }
+    #voorraden{
+        grid-row: 1;
+        grid-column: 3/5;
+    }
     main{
-      padding: 0px 48px 0px 48px;
+      margin: 0px 16px 0px 16px;
     }
     .logo{
-    height: 32px;
-    margin-bottom: 24px;
+      height: 32px;
+      margin-bottom: 24px;
     }
     .box{
-      max-width: 900px;
+      max-width: 1200px;
       font-size: 12px;
       box-shadow: 0px 0px 15px rgba(0,0,0,0.7) inset;
-      height: 400px;
+      max-height: 500px;
     }
     #gauge, #voorraadEten, #voorraadWater{
       margin: 32px 32px 32px 32px;
@@ -142,6 +205,5 @@ h1{
     #voorraadEten, #voorraadWater{
       float: left;
       width: 300px;
-    }
-    
+    }   
 }
